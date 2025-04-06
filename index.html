@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flip-Flop Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Flip-Flop Simulator</h2>
+    
+    <div class="container">
+        <label for="flipflopType">Select Flip-Flop:</label>
+        <select id="flipflopType" onchange="toggleInputs()">
+            <option value="SR">SR Flip-Flop</option>
+            <option value="D">D Flip-Flop</option>
+            <option value="JK">JK Flip-Flop</option>
+            <option value="T">T Flip-Flop</option>
+        </select>
+
+        <div class="input-group" id="srInputs">
+            <label>S: <input type="number" id="S" min="0" max="1"></label>
+            <label>R: <input type="number" id="R" min="0" max="1"></label>
+        </div>
+
+        <div class="input-group" id="dInputs">
+            <label>D: <input type="number" id="D" min="0" max="1"></label>
+        </div>
+
+        <div class="input-group" id="jkInputs">
+            <label>J: <input type="number" id="J" min="0" max="1"></label>
+            <label>K: <input type="number" id="K" min="0" max="1"></label>
+        </div>
+
+        <div class="input-group" id="tInputs">
+            <label>T: <input type="number" id="T" min="0" max="1"></label>
+        </div>
+
+        <label>Clock: <input type="number" id="clk" min="0" max="1"></label>
+        <button onclick="simulateFlipFlop()">Simulate</button>
+        <h3>Output: <span id="output">Q = ?</span></h3>
+    </div>
+
+    <!-- Block Diagram Section -->
+    <div class="circuit">
+        <h3>Flip-Flop Block Diagram</h3>
+        <img id="flipflopDiagram" src="../diagrams/SR.jpg" alt="Flip-Flop Block Diagram">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
